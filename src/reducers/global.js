@@ -1,15 +1,16 @@
-import { actionTypes } from '../actions/currencies'
+import { actionTypes } from '../actions/global'
 
 const defaultState = {
-  list: []
+  loading: false,
+  error: {}
 }
 
 export default (state = defaultState, action) => {
   switch (action.type) {
-    case actionTypes.SET_CURRENCIES:
+    case actionTypes.SET_LOADING:
       return {
         ...state,
-        list: action.data
+        loading: action.loading
       }
     default:
       return state
